@@ -1,0 +1,45 @@
+// Search ranges and rules file
+// ****************************
+
+[PARAMETERS]
+//#isInt? #name   #dist.#min  #max 
+//all Ns are in number of haploid individuals
+1  NPOP1        unif    50000   200000   output
+1  NPOP2       unif     50000   200000   output
+1  NPOP3        unif     50000   200000   output
+1  NPOPPLA        unif     50000   200000   output
+1  NANC2        unif     1000   10000   output
+1  NANC3        unif     1000   10000   output
+1  NANCPLA        unif     1000   10000   output
+1  TEXP2        unif     5000   15000   output
+1  TEXP3        unif     5000   15000   output
+1  TEXPPLA        unif     5000   15000   output
+1  TSPLIT3        unif     40000   50000   output
+1  TSPLIT2        unif     25000   35000   output
+1  TSPLIT1        unif     5000   20000   output
+
+
+[RULES]
+TEXP2 < TSPLIT2  
+TEXP3 < TSPLIT1
+TEXPPLA < TSPLIT1
+
+[COMPLEX PARAMETERS]
+0 RESIZE2 = NANC2 / NPOP2       output
+0 RESIZE3 = NANC3 / NPOP3       output
+0 RESIZEPLA = NANCPLA / NPOPPLA       output
+
+
+0 RatioPop2 = NANC2 / NPOP2    hide
+0 RtePOP2 = log(RatioPop2)    hide
+0 POP2Grow = RtePOP2 / TEXP2   output
+
+0 RatioPop3 = NANC3 / NPOP3    hide
+0 RtePOP3 = log(RatioPop3)    hide
+0 POP3Grow = RtePOP3 / TEXP3   output
+
+0 RatioPopPLA = NANCPLA / NPOPPLA    hide
+0 RtePOPPLA = log(RatioPopPLA)    hide
+0 POPPLAGrow = RtePOPPLA / TEXPPLA   output
+
+0 RESIZE_ANC = 5000/NPOP1

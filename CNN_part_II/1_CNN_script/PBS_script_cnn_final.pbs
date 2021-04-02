@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+#
+#PBS -l walltime=1:00:00
+#PBS -l nodes=1:ppn=40
+#PBS -N FonsecaModel
+#PBS -j oe
+#PBS -A PAA0202
+
+
+cd $PBS_O_WORKDIR
+
+
+module load python
+
+python3 /fs/project/PAA0202/Emanuel/Norops/Part_II/1_CNN_script/CNN_script_final.py
