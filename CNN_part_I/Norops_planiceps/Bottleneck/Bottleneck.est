@@ -1,0 +1,14 @@
+// Search ranges and rules file
+// ****************************
+
+[PARAMETERS]
+//#isInt? #name   #dist.#min  #max 
+//all Ns are in number of haploid individuals
+1  NANC        unif     50000   500000   output
+1  NPOP1       unif     1000   10000  output
+1  TEXP        unif     5000   15000   output
+
+[RULES]
+
+[COMPLEX PARAMETERS]
+0 RESIZE = NANC / NPOP1       output

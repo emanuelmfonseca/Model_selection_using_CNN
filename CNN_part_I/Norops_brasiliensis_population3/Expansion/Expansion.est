@@ -1,0 +1,20 @@
+// Search ranges and rules file
+// ****************************
+
+[PARAMETERS]
+//#isInt? #name   #dist.#min  #max 
+//all Ns are in number of haploid individuals
+1  NANC        unif     1000   10000   output
+1  NPOP3       unif     50000   500000   output
+1  TEXP        unif     5000   15000   output
+
+[RULES]
+NANC < NPOP3
+
+
+[COMPLEX PARAMETERS]
+0 RESIZE = NANC / NPOP3       output
+
+0 RatioPop3 = NANC / NPOP3    hide
+0 RtePOP3 = log(RatioPop3)    hide
+0 POP3Grow = RtePOP3 / TEXP   output
