@@ -1,6 +1,6 @@
 # Phylogeography model selection using Convolutional Neural Networks
 
-This repository contains the scripts used to generate simulated datasets and compare them using phylogeographic models using convolutional neural network (CNN) from Fonseca et al. (Fonseca, EM; Colli, GR; Werneck, FP; Carstens, BC. Phylogeographic model selection using convolutional neural networks. In review.).
+This repository contains the scripts used to generate simulated datasets and compare them using phylogeographic models using convolutional neural network (CNN) from Fonseca et al. (Fonseca EM, Colli GR, Werneck FP, Carstens BC. Phylogeographic model selection using convolutional neural networks. In review.).
 
 Prepring available at: https://www.biorxiv.org/content/10.1101/2020.09.11.291856v1
 
